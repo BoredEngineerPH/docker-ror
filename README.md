@@ -1,13 +1,15 @@
 ## Building and running the container
-With all our config files setup, let's build and run the container! After the loads of terms we encountered, building and running the container is way simpler. It will only involve few commands.
 
-### 1. In your terminal, run `docker-compose build`
-Running this command will get Dockerfile and install all the necessary things to make a rails development environment. Note that the installation may take a while because docker will need to download the necessary packages.
+### 1. Build, run `docker-compose build`
+This command will execute Dockerfile and install all the prerequisites start setuo rails development environment. This may take a while depending on your internet connection.
 
-### 2. In your terminal, run `docker-compose run --rm --service-ports ruby_dev`
-This command will start a bash terminal that will be your rails development environment where the rails commands are available. With only these two commands, and two config files, you already have a rails environment without even going through a log of troubleshooting! Notice that our command has some flags, `--rm` means remove the container after using it, and `--service-ports` means use port 3000 in our container so we can see our rails server in action. The name `ruby_dev` also came from services found at our `docker-compose.yml`.
+### 2. Running the container, run `docker-compose run --rm --service-ports ruby_dev`
+This command will start a bash terminal that will be your rails development environment where the rails commands are available. This command uses flags.
 
-## Test-run a rails app
+* `--rm` means remove the container after using it, and 
+* `--service-ports` means use port 3000 in our container so we can see our rails server in action. The name `ruby_dev` also came from services found at our `docker-compose.yml`.
+
+## Test
 Now that we've successfully made our rails development environment, we'll test a sample rails app.
 
 ### 1. Run `rails new myapp && cd myapp`
