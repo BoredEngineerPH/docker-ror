@@ -1,0 +1,22 @@
+{
+  "name": "docker-ror",
+  "version": "1.0.0",
+  "description": "Dockerize Ruby of Rails with PostgreSQL",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker-compose build",
+    "exec": "docker-compose run --rm --service-ports ruby_dev",
+    "close": "docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoredEngineerPH/docker-ror.git"
+  },
+  "author": "BoredEngineerPH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BoredEngineerPH/docker-ror/issues"
+  },
+  "homepage": "https://github.com/BoredEngineerPH/docker-ror#readme"
+}
