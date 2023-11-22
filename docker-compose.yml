@@ -1,10 +1,32 @@
 version: "3.7"
+networks:
+  ror-network:
+    driver: bridge
 
 services:
+  db:
+    container_name: rails_db
+    image: postgres:latest
+    environment:
+        POSTGRES_USER: "${DB_USER}" 
+        POSTGRES_PASSWORD: "${DB_PASS}"   
+        POSTGRES_DB: "${DB_NAME}"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - ror-network
   ruby_dev:
     build: .
     container_name: rails_dev
     ports:
       - "3000:3000"
+    links:
+      - db
     volumes:
       - ./src:/home/app
+    networks:
+      - ror-network
+volumes: 
+  pgdata:
